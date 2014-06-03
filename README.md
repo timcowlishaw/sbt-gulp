@@ -1,6 +1,9 @@
 # About
 
-A plugin to allow use of the Grunt JS build tool from within SBT.
+A plugin to allow use of the Gulp JS build tool from within SBT - shamelessly
+forked and search-and-replaced from [Joseph Price's Grunt Plugin](https://github.com/joprice/sbt-grunt).
+
+
 
 # Installation
 
@@ -12,25 +15,25 @@ to install the plugin locally.
 
 Add this line to plugins.sbt:
 ```scala
-  addSbtPlugin("com.joprice" % "grunt-plugin" % "0.0.1")
+  addSbtPlugin("uk.co.timcowlishaw" % "gulp-plugin" % "0.0.1")
 ```
 and to build.sbt, the following:
 ```scala
-  import com.joprice.GruntPlugin.GruntKeys._
+  import uk.co.timcowlishaw.GulpPlugin.GulpKeys._
 
-  seq(gruntSettings: _*)
+  seq(gulpSettings: _*)
 ```
 # Configuration
 
-Currently only one setting is exposed: 
+Currently only one setting is exposed:
 ```scala
-  SettingKey[String]("grunt-app-base")
+  SettingKey[String]("gulp-app-base")
 ```
-This defines the directory in which the 'grunt' command is called. The
-default is "src/main/webapp". This should be the folder where grunt.js
+This defines the directory in which the 'gulp' command is called. The
+default is "src/main/webapp". This should be the folder where Gulpfile.js
 is located.
 
-Override it with 
+Override it with
 ```scala
-  gruntAppBase := "path/to/webapp"
+  gulpAppBase := "path/to/webapp"
 ```

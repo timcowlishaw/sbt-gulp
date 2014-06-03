@@ -1,10 +1,10 @@
 sbtPlugin := true
 
-name := "grunt-plugin"
+name := "gulp-plugin"
 
 version := "0.0.1"
 
-organization := "com.joprice"
+organization := "uk.co.timcowlishaw"
 
 scalacOptions += "-unchecked"
 
